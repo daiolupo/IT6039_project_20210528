@@ -1,5 +1,9 @@
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+"""
+Created on the 19 April 2022
+
+@Author Dwain Aiolupotea
+
+"""
 
 import unittest
 import BowlingGame

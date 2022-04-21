@@ -1,3 +1,10 @@
+"""
+Created on the 19 April 2022
+
+@Author Dwain Aiolupotea
+
+"""
+
 class BowlingGame:
     def __init__(self):
         self.rolls = []
