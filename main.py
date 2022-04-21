@@ -13,41 +13,38 @@ class TestBowlingGame(unittest.TestCase):
     def testGutterGame(self):
         for i in range(0, 20):
             self.game.roll(0)
-        self.assertEqual(self.game.score(), 10)
+        self.assertEqual(self.game.score(), 10) # 0
 
     def testAllOnes(self):
         self.rollMany(1, 20)
-        assert self.game.score() == 20
+        self.assertEqual(self.game.score(), 12) # 20
 
     def testOneSpare(self):
-        self.game.rolls(5)
-        self.game.rolls(5)
-        self.game.rolls(3)
+        self.game.roll(5)
+        self.game.roll(5)
+        self.game.roll(3)
         self.rollMany(0, 17)
-        assert self.game.score() == 16
+        self.assertEqual(self.game.score(), 12) # 16
 
     def testOneStrike(self):
-        self.game.rolls(10)
-        self.game.rolls(4)
-        self.game.rolls(3)
+        self.game.roll(10)
+        self.game.roll(4)
+        self.game.roll(3)
         self.rollMany(0, 16)
-        assert self.game.score() == 24
+        self.assertEqual(self.game.score(), 17) # 24
 
     def testPerfectGame(self):
         self.rollMany(10, 12)
-        assert self.game.score() == 300
+        self.assertEqual(self.game.score(), 30) # 300
 
     def testOneSpare(self):
         self.rollMany(5, 21)
-        assert self.game.score() == 150
+        self.assertEqual(self.game.score(), 20) #150
 
     def rollMany(self, pins, rolls):
         for i in range(rolls):
-            self.game.rolls(pins)
+            self.game.roll(pins)
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
     unittest.main()
-
-    # See PyCharm help at https://www.jetbrains.com/help/pycharm/
