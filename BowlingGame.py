@@ -10,7 +10,7 @@ class BowlingGame:
         rollIndex=0
         for frameIndex in range(10):
             if frameIndex in range(10):
-                result += self.StrikeScore(rollIndex)
+                result += self.strikeScore(rollIndex)
                 rollIndex +=1
             elif self.isSpare(rollIndex):
                 result += self.spareScore(rollIndex)
