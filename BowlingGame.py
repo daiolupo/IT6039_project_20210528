@@ -1,11 +1,11 @@
 """
 Created on the 19 April 2022
-
 @Author Dwain Aiolupotea
-
 """
 
+
 class BowlingGame:
+
     def __init__(self):
         self.rolls = []
 
@@ -14,30 +14,30 @@ class BowlingGame:
 
     def score(self):
         result = 0
-        rollIndex = 0
+        rollindex = 0
         for frameIndex in range(10):
-            if frameIndex in range(10):
-                result += self.strikeScore(rollIndex)
-                rollIndex += 1
-            elif self.isSpare(rollIndex):
-                result += self.spareScore(rollIndex)
-                rollIndex += 2
+            if self.is_strike(rollindex):
+                result += self.strike_score(rollindex)
+                rollindex += 1
+            elif self.is_spare(rollindex):
+                result += self.spare_score(rollindex)
+                rollindex += 2
             else:
-                result += self.frameScore(rollIndex)
-                rollIndex += 2
-            return result
+                result += self.frame_score(rollindex)
+                rollindex += 2
+        return result
 
-    def isStrike(self, rollIndex):
-        return self.rolls[rollIndex] == 10
+    def is_strike(self, rollindex):
+        return self.rolls[rollindex] == 10
 
-    def isSpare(self, rollIndex):
-        return self.rolls[rollIndex] + self.rolls[rollIndex + 1] == 10
+    def is_spare(self, rollindex):
+        return self.rolls[rollindex] + self.rolls[rollindex + 1] == 10
 
-    def strikeScore(self, rollIndex):
-        return 10 + self.rolls[rollIndex + 1] + self.rolls[rollIndex + 2]
+    def strike_score(self, rollindex):
+        return 10 + self.rolls[rollindex + 1] + self.rolls[rollindex + 2]
 
-    def spareScore(self, rollIndex):
-        return 10 + self.rolls[rollIndex + 2]
+    def spare_score(self, rollindex):
+        return 10 + self.rolls[rollindex + 2]
 
-    def frameScore(self, rollIndex):
-        return self.rolls[rollIndex] + self.rolls[rollIndex + 1]
+    def frame_score(self, rollindex):
+        return self.rolls[rollindex] + self.rolls[rollindex + 1]
