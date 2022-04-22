@@ -1,6 +1,12 @@
 """
 Created on the 19 April 2022
 @Author Dwain Aiolupotea
+
+BOWLING GAME
+============
+
+This bowling game source code is a 10pin bowling game prototype used to teach a variety of subjects.
+The source code was developed for testing using unittest framework module.
 """
 
 import unittest
@@ -9,7 +15,35 @@ import BowlingGame
 class TestBowlingGame(unittest.TestCase):
 
     def setUp(self):
+        """
+        First initial test to create a bowling game
+
+        Methods:
+        --------
+        test_GutterGame(self)
+            A function that tests gutter games with all zero scores. Assert to check the score equals to 0
+
+        test_AllOnes(self)
+             A Function that tests all one scores with a roll of 20 times. Assert to check the score equals to 20
+
+        test_OneSpare(self)
+            A Function that tests one spare roll. Assert to check the score equals to 16
+
+        test_OneStrike(self)
+            A function to test a strike. An Assert to check the score equals to 24
+
+        test_PerfectGame(self)
+            A function to test a perfect game with 10 rolls. Assert to check that the score equals to 300
+
+        test_AllSpares(self)
+            A function to test all spares. Assert to check that the score equals to 150
+
+        rollMany(self, pins, rolls)
+            A function to for many rolls.
+        """
+
         self.game = BowlingGame.BowlingGame()
+
 
     def test_GutterGame(self):
         for i in range(0, 20):
@@ -38,7 +72,7 @@ class TestBowlingGame(unittest.TestCase):
         self.rollMany(10, 12)
         self.assertEqual(self.game.score(), 300)
 
-    def test_OneSpare(self):
+    def test_AllSpares(self):
         self.rollMany(5, 21)
         self.assertEqual(self.game.score(), 150)
 
