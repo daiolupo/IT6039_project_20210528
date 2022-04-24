@@ -39,7 +39,7 @@ class TestBowlingGame(unittest.TestCase):
             A function to test all spares. Assert to check that the score equals to 150
 
         rollMany(self, pins, rolls)
-            A function to for many rolls.
+            A function for many rolls.
         """
 
         self.game = BowlingGame.BowlingGame()

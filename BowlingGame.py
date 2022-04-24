@@ -29,14 +29,19 @@ class BowlingGame:
         Define the results. A function that calculates the score and returns a result
 
     is_strike(rollindex)
-        A function that checks if there was a strike. If the score is equal to ten then it's a strike.
+        A function that checks if there was a strike and takes one argument rollindex. If the score is equal to ten then it's a strike.
 
-    is_spare(rollindex),
-    strike_score(rollindex),
-    strike_score(rollindex),
-    spare_score(rollindex),
+    is_spare(rollindex)
+        A function that checks if there is a spare with one argument rollindex.
+
+    strike_score(rollindex)
+        A function for strike score and takes one argument rollindex.
+
+    spare_score(rollindex)
+        A function for the spare score and takes one argument rollindex.
+
     frame_score(rollindex)
-        A group of helper methods for checking. if there is a strike or if there is a spare. A method for Strike score, Spare score and frame score.
+        A function for a frame score and takes one argument rollindex.
     """
 
     def __init__(self):
